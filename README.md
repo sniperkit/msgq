@@ -59,13 +59,17 @@ func Dial(sock mangos.Socket, url string) error
 ## Receiver Functions
 
 ```go
-func Listen(sock mangos.Socket, url string) error {
+func Listen(sock mangos.Socket, url string) error
 ```
 
 ```go
-func Receive(sock mangos.Socket) (msg []byte, err error) {
+func Receive(sock mangos.Socket) (msg []byte, err error)
 ```
 
 ## Example
 
 See [https://github.com/ibmendoza/go-examples/tree/master/msgq](https://github.com/ibmendoza/go-examples/tree/master/msgq)
+
+## License
+
+MIT
