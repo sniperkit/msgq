@@ -48,15 +48,19 @@ func NewRespondent(url string) (sock mangos.Socket, err error)
 
 ## Sender Functions
 
-```go
-func Send(sock mangos.Socket, msg []byte) error
-```
+**Dial first, then send**
 
 ```go
 func Dial(sock mangos.Socket, url string) error
 ```
 
+```go
+func Send(sock mangos.Socket, msg []byte) error
+```
+
 ## Receiver Functions
+
+**Listen first, then receive**
 
 ```go
 func Listen(sock mangos.Socket, url string) error
