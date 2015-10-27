@@ -1,5 +1,5 @@
 # msgq
-Convenience TCP wrapper around [mangos](http://github.com/gdamore/mangos) and [Iris](https://github.com/project-iris/iris) to avoid boilerplate code when generating 
+Convenience wrapper around [mangos](http://github.com/gdamore/mangos) and [Iris](https://github.com/project-iris/iris) to avoid boilerplate code when generating 
 new instances of SP (scalability protocols) patterns and some syntax sugar regarding sender/receiver functions. 
 Does not abstract away mangos and iris-go libraries.
 
