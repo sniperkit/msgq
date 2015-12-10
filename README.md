@@ -76,19 +76,31 @@ func Receive(sock mangos.Socket) (msg []byte, err error)
 type Iris struct {
 	conn *iris.Connection
 }
+```
 
+```go
 func (i *Iris) Connect(port int) (err error) 
-
+```
+```go
 func (i *Iris) Close() error 
-
+```
+```go
 func (i *Iris) Publish(topic string, msg []byte) error 
+```
 
+```go
 func (i *Iris) Subscribe(topic string, handler iris.TopicHandler) error 
+```
 
+```go
 func (i *Iris) Unsubscribe(topic string) error 
+```
 
+```go
 func (i *Iris) Broadcast(cluster string, msg []byte) error 
+```
 
+```go
 func (i *Iris) Request(cluster string, msg []byte, timeout time.Duration) ([]byte, error) 
 ```
 
