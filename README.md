@@ -4,7 +4,7 @@ new instances of SP (scalability protocols) patterns and some syntax sugar regar
 Does not abstract away mangos and iris-go libraries.
 
 
-## New Instance Functions
+### Mangos New Instance Functions
 
 ```go
 func NewBus(url string) (sock mangos.Socket, err error)
@@ -46,7 +46,7 @@ func NewSurveyor(url string) (sock mangos.Socket, err error)
 func NewRespondent(url string) (sock mangos.Socket, err error)
 ```
 
-## Sender Functions
+### Mangos Sender Functions
 
 **Dial first, then send**
 
@@ -58,7 +58,7 @@ func Dial(sock mangos.Socket, url string) error
 func Send(sock mangos.Socket, msg []byte) error
 ```
 
-## Receiver Functions
+## Mangos Receiver Functions
 
 **Listen first, then receive**
 
@@ -70,10 +70,32 @@ func Listen(sock mangos.Socket, url string) error
 func Receive(sock mangos.Socket) (msg []byte, err error)
 ```
 
-## Example
+### NSQ Struct and Functions
+
+```go
+type Iris struct {
+	conn *iris.Connection
+}
+
+func (i *Iris) Connect(port int) (err error) 
+
+func (i *Iris) Close() error 
+
+func (i *Iris) Publish(topic string, msg []byte) error 
+
+func (i *Iris) Subscribe(topic string, handler iris.TopicHandler) error 
+
+func (i *Iris) Unsubscribe(topic string) error 
+
+func (i *Iris) Broadcast(cluster string, msg []byte) error 
+
+func (i *Iris) Request(cluster string, msg []byte, timeout time.Duration) ([]byte, error) 
+```
+
+### Example
 
 See [https://github.com/ibmendoza/go-examples/tree/master/msgq](https://github.com/ibmendoza/go-examples/tree/master/msgq)
 
-## License
+### License
 
 MIT
